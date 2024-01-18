@@ -3,6 +3,7 @@
         "*.ejs": "html",
         "stack": "cpp",
         "queue": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }
