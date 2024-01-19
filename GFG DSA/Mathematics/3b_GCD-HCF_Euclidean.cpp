@@ -43,6 +43,7 @@ int gcdOpt(int a, int b)
     return gcdOpt(b, a % b);
 }
 // This is super optimized and the a>b or b>a problem will also be handled in this. The a%b will give the remainder, which we indirectly want.
+// O(log(min(a,b)))
 
 int main()
 {
