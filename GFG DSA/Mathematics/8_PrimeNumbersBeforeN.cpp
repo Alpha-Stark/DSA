@@ -19,22 +19,30 @@ bool isPrime(int n)
             return false;
         }
     }
+
     return true;
 } // Overall => O(√n)
 
+void primeDivisors(int n)
+{
+    if (n == 1)
+        return;
+
+    for (int i = 2; i <= n; i++)
+    {
+        if (isPrime(i))
+        {
+            cout << i << " ";
+        }
+    }
+} // O(n√n)
+
 int main()
 {
-    int n;
     cout << "Enter a number:";
+    int n;
     cin >> n;
-    if (isPrime(n))
-    {
-        cout << "Yes" << endl;
-    }
-    else
-    {
-        cout << "No" << endl;
-    }
+    primeDivisors(n);
 
     return 0;
 }

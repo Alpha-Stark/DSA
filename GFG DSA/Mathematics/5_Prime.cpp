@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool checkPrime(int n)
+bool isPrime(int n)
 {
     if (n == 1)
     {
@@ -29,7 +29,7 @@ int main()
     int n;
     cout << "Enter a number:";
     cin >> n;
-    if (checkPrime(n))
+    if (isPrime(n))
     {
         cout << "Yes" << endl;
     }

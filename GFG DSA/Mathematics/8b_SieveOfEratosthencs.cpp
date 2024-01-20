@@ -19,22 +19,39 @@ bool isPrime(int n)
             return false;
         }
     }
+
     return true;
 } // Overall => O(√n)
 
+void sieve(int n)
+{
+    vector<bool> v(n + 1, true);
+
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (isPrime(i))
+        {
+            for (int j = 2 * i; j <= n; j = j + i)
+            {
+                v[j] = false;
+            }
+        }
+    }
+    for (int i = 2; i <= n; i++)
+    {
+        if (v[i])
+        {
+            cout << i << " ";
+        }
+    }
+}
+
 int main()
 {
-    int n;
     cout << "Enter a number:";
+    int n;
     cin >> n;
-    if (isPrime(n))
-    {
-        cout << "Yes" << endl;
-    }
-    else
-    {
-        cout << "No" << endl;
-    }
+    sieve(n);
 
     return 0;
 }
