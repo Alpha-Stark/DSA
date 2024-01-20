@@ -31,7 +31,8 @@ void sieve(int n)
     {
         if (isPrime(i))
         {
-            for (int j = 2 * i; j <= n; j = j + i)
+            // for (int j = 2 * i; j <= n; j = j + i)
+            for (int j = i * i; j <= n; j = j + i) // this will not go through the already traversed number which are the part of lower prime's multiple.
             {
                 v[j] = false;
             }
@@ -45,6 +46,23 @@ void sieve(int n)
         }
     }
 }
+
+void sieve2(int n) // same complexity as above, just with less lines of code.
+{
+    vector<bool> v(n + 1, true);
+
+    for (int i = 2; i <= n; i++)
+    {
+        if (isPrime(i))
+        {
+            cout << i << " ";
+            for (int j = i * i; j <= n; j = j + i) // this will not go through the already traversed number which are the part of lower prime's multiple.
+            {
+                v[j] = false;
+            }
+        }
+    }
+} // O(n loglog(n)) => This is almost nearly O(n) which is good as compared to naive O(n√n)~O(n^3/2)
 
 int main()
 {

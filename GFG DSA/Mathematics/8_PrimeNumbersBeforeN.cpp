@@ -23,7 +23,7 @@ bool isPrime(int n)
     return true;
 } // Overall => O(√n)
 
-void primeDivisors(int n)
+void printPrimes(int n)
 {
     if (n == 1)
         return;
@@ -42,7 +42,7 @@ int main()
     cout << "Enter a number:";
     int n;
     cin >> n;
-    primeDivisors(n);
+    printPrimes(n);
 
     return 0;
 }
