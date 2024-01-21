@@ -11,7 +11,7 @@ int power(int n, int p)
     return res;
 } // O(n)
 
-int powerOpt(int n, int p)
+long long int powerOpt(int n, int p)
 {
     if (p == 1)
     {
