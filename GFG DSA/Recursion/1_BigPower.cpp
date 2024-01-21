@@ -37,6 +37,7 @@ public:
 
             long long mod = powerMod(10, 9) + 7;
             return (power(N, R / 2) * power(N, R / 2)) % mod;
+            // This will still take bit of more time and wont be able to solve the question.
         }
         else
         {
