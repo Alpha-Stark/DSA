@@ -80,6 +80,30 @@ int main()
 }
 // } Driver Code Ends
 
+/* GPT Explaination
+
+This code defines two functions, `modfun` and `power`, which are used to calculate modular exponentiation.
+
+1. **`modfun` function:**
+   - Input Parameters: `n` (base), `R` (exponent)
+   - Output: Modular exponentiation of `n^R` with respect to the modulo `1000000007`.
+   - This function is a recursive implementation of modular exponentiation using the divide-and-conquer approach.
+   - Base cases:
+     - If `n` is 0, it returns 0.
+     - If `R` is 0, it returns 1 (any number raised to the power of 0 is 1).
+   - If `R` is even, it calculates `y = (n^(R/2)) % 1000000007` and then squares it: `y = (y * y) % 1000000007`.
+   - If `R` is odd, it calculates `y = (n * modfun(n, R - 1)) % 1000000007`, essentially reducing the problem to an even power.
+   - The final result is returned as `((y + 1000000007) % 1000000007)`.
+
+2. **`power` function:**
+   - Input Parameters: `N` (base), `R` (exponent)
+   - Output: Modular exponentiation of `N^R` with respect to the modulo `1000000007`.
+   - This function simply calls `modfun(N, R)` and takes the result modulo `1000000007`. It provides an interface to calculate modular exponentiation with a given base and exponent.
+
+The code uses modular arithmetic throughout the calculations, which is often used to prevent integer overflow by taking the result modulo a large prime number (in this case, `1000000007`). The modulo operation is applied at each step to keep the intermediate results within manageable bounds. The code appears to be well-commented, explaining each step of the modular exponentiation process.
+
+ */
+
 /* Base Logic:
 
 int powerOpt(int n, int p)
