@@ -79,3 +79,30 @@ int main()
     }
 }
 // } Driver Code Ends
+
+/* Base Logic:
+
+int powerOpt(int n, int p)
+{
+    int res = 1;
+    while (p > 0)
+    {
+        // if (p % 2 != 0) //Can be also written as below, and its faster because of bitwise nature.
+        if (p & 1)
+        {
+            // cout << "1 ";
+            res = res * n;
+        }
+        else
+        {
+            // cout << "0 ";
+        }
+        n = n * n;
+        // p = p / 2; //Also written as below, and its faster because of bitwise nature.
+        p = p >> 1;
+    }
+    return res;
+} // O(logn), better than recursive, because it's complexity is same as Recursive, but auxilary Space is O(1) only.
+
+
+ */
