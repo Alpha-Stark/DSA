@@ -8,12 +8,7 @@ bool checkPalindrome(string &s, int start, int end) // we do this referencing fo
         return true;
     }
 
-    if (s[start] != s[end])
-    {
-        return false;
-    }
-
-    return checkPalindrome(s, start + 1, end - 1);
+    return (s[start] == s[end]) && checkPalindrome(s, start + 1, end - 1);
 }
 
 int main()
