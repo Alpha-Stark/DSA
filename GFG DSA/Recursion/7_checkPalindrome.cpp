@@ -1,19 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool checkPalindrome(string s)
+bool checkPalindrome(string &s, int start, int end) // we do this referencing for optimization as it avoids the string's unnecessary copy.
 {
-    if (s.length() <= 1)
+    if (start >= end)
     {
         return true;
     }
 
-    if (s[0] != s[s.back()])
+    if (s[start] != s[end])
     {
         return false;
     }
 
-    return checkPalindrome(s.substr(1, s.length()));
+    return checkPalindrome(s, start + 1, end - 1);
 }
 
 int main()
@@ -21,7 +21,7 @@ int main()
     string s;
     cout << "Enter the String: ";
     cin >> s;
-    if (checkPalindrome(s))
+    if (checkPalindrome(s, 0, s.length() - 1))
     {
         cout << "True" << endl;
     }
