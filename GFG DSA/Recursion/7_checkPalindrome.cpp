@@ -10,6 +10,9 @@ bool checkPalindrome(string &s, int start, int end) // we do this referencing fo
 
     return (s[start] == s[end]) && checkPalindrome(s, start + 1, end - 1);
 }
+/*
+T(n) = T(n-2) + ø(1), and this comes to be O(n). And ø(n/2) function calls, means the Aux Space ø(n/2)~= ø(n) => O(n).
+ */
 
 int main()
 {
