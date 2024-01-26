@@ -11,10 +11,10 @@ public:
     long long modfun(long long n, long long R)
     {
         // Base cases
-
         if (n == 0)
             return 0;
         // power zero mean answer is 1
+
         if (R == 0)
             return 1;
 
@@ -128,5 +128,4 @@ int powerOpt(int n, int p)
     return res;
 } // O(logn), better than recursive, because it's complexity is same as Recursive, but auxilary Space is O(1) only.
 
-
- */
+*/
