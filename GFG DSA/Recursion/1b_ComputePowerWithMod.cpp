@@ -8,6 +8,7 @@ class Solution
 public:
     // compute pow(n, R) with mod 1000000007
 
+
     long long modfun(long long n, long long R)
     {
         // Base cases
