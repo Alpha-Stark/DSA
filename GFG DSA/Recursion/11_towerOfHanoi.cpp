@@ -5,7 +5,8 @@ void towerOfHanoi(int n, char a, char b, char c)
 {
     if (n == 1)
     {
-        cout << "Move Disc " << n << " from " << a << " to " << c << endl;
+        // cout << "Move Disc " << n << " from " << a << " to " << c << endl;
+        cout << "Move Disc 1 from " << a << " to " << c << endl;
         return;
     }
 
