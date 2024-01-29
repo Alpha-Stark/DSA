@@ -1,11 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void towerOfHanoi(int n)
+void towerOfHanoi(int n, char a, char b, char c)
 {
-    // A Call
-    // /* MyCode */
-    // B Call
+    if (n == 1)
+    {
+        cout << "Move Disc " << n << " from " << a << " to " << c << endl;
+        return;
+    }
+
+    towerOfHanoi(n - 1, a, c, b);
+
+    cout << "Move Disc " << n << " from " << a << " to " << c << endl;
+
+    towerOfHanoi(n - 1, b, a, c);
 }
 
 int main()
@@ -14,7 +22,7 @@ int main()
     cout << "Enter a number: ";
     cin >> n;
 
-    towerOfHanoi(n);
+    towerOfHanoi(n, 'A', 'B', 'C');
 
     return 0;
 }
