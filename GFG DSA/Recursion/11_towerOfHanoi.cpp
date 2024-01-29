@@ -15,7 +15,7 @@ void towerOfHanoi(int n, char a, char b, char c)
     cout << "Move Disc " << n << " from " << a << " to " << c << endl;
 
     towerOfHanoi(n - 1, b, a, c);
-}
+} // from every iteration we'll have 2 calls, hence doubling the numbers (2^n) => 1+2+4+...2^(n-1) total opeartion. Hence 2^(n-1) operation.
 
 /*
 As always we do recursive problem as,
