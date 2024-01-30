@@ -63,22 +63,16 @@ long long rev(long long n)
 
 int main()
 {
-    int T;
-    cin >> T; // testcases
+    long long N;
+    cin >> N; // input N
 
-    while (T--)
-    {
-        long long N;
-        cin >> N; // input N
+    long long R = 0;
 
-        long long R = 0;
-
-        // reverse the given number n
-        R = rev(N);
-        Solution ob;
-        // power of the number to it's reverse
-        long long ans = ob.power(N, R);
-        cout << ans << endl;
-    }
+    // reverse the given number n
+    R = rev(N);
+    Solution ob;
+    // power of the number to it's reverse
+    long long ans = ob.power(N, R);
+    cout << ans << endl;
 }
 // } Driver Code Ends
