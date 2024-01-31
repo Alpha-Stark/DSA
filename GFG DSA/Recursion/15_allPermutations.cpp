@@ -6,6 +6,7 @@ void permute(string s, int i = 0)
     if (i == s.length() - 1)
     {
         cout << s << " ";
+        return;
     }
 
     // fixed the current character and went on about next to it characters.
