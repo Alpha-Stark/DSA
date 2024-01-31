@@ -13,7 +13,7 @@ void permute(string s, int i = 0)
     {
         swap(s[i], s[j]);
         permute(s, i + 1);
-        swap(s[j], s[i]);
+        swap(s[j], s[i]); // To get back to the just previous stage from which we can do other premutation from that stage.
     }
 }
 
