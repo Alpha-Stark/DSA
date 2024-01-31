@@ -13,6 +13,7 @@ int subsetSum(vector<int> current, vector<int> &v, int sum)
     {
         int front = v.front();
         current.push_back(front);
+
         for (int i = 0; i < current.size(); i++)
         {
             currentSum += current[i];
@@ -34,16 +35,10 @@ int subsetSum(vector<int> current, vector<int> &v, int sum)
         }
     }
 
-    /* for (int i = 0; i < current.size(); i++)
-    {
-        cout << current[i] << " ";
-    }
-    cout << endl; */
-
     int a = subsetSum(current, newV, sum);
+
     // new current
-    int front = v.front(); // print(front: v.front())
-    // cout << "Front: " << front << endl;
+    int front = v.front();
     current.push_back(front);
     int b = subsetSum(current, newV, sum);
 
