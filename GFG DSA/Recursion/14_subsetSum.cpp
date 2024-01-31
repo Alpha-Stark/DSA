@@ -1,53 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int subsetSum(vector<int> current, vector<int> &v, int sum)
+int subsetSum(vector<int> current, vector<int> v, int sum)
 {
+
     if (sum == 0)
     {
         return 1;
     }
 
-    int currentSum = 0;
-    if (v.size() == 1)
+    if (v.empty())
     {
-        int front = v.front();
-        current.push_back(front);
-
-        for (int i = 0; i < current.size(); i++)
-        {
-            currentSum += current[i];
-        }
-        if (currentSum == sum)
-        {
-            return 1;
-        }
         return 0;
     }
 
-    // new v
-    vector<int> newV;
-    if (v.size() != 1)
-    {
-        for (int i = 1; i < v.size(); i++)
-        {
-            newV.push_back(v[i]);
-        }
-    }
+    // v update
+    int back = v.back();
+    v.pop_back();
 
-    int a = subsetSum(current, newV, sum);
+    int a = subsetSum(current, v, sum);
 
     // new current
-    int front = v.front();
-    current.push_back(front);
-    int b = subsetSum(current, newV, sum);
+    current.push_back(back);
+    int b = subsetSum(current, v, sum);
 
     int Returnsum = a + b;
 
+    int currentSum = 0;
     for (int i = 0; i < current.size(); i++)
     {
         currentSum += current[i];
     }
+
     if (currentSum == sum)
         Returnsum++;
 
@@ -76,12 +60,6 @@ int main()
 
     // cout << "Enter the Sum: ";
     cin >> sum;
-
-    if (v.empty())
-    {
-        cout << "0" << endl;
-        return 0;
-    }
 
     cout << subsetSum(current, v, sum) << endl;
 
