@@ -11,6 +11,19 @@ void reverseArray(int *arr, int n)
     }
 }
 
+void reverseArray2(int *arr, int n)
+{
+    int low = 0, high = n - 1;
+    while (low < high)
+    {
+        int temp = arr[low];
+        arr[low] = arr[high];
+        arr[high] = temp;
+        low++;
+        high--;
+    }
+}
+
 int main()
 {
     int n;
