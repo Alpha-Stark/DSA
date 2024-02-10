@@ -14,6 +14,7 @@ void zeroToEnd(int *arr, int n)
         }
     }
 }
+
 int main()
 {
     int n;
