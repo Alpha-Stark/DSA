@@ -37,7 +37,7 @@ int stockProfit2(int *arr, int n)
     }
     if (isBought)
     {
-        profit += arr[n - 1] - arr[buyI];
+        profit += arr[n - 1] - arr[buyI]; // make sure you are subtracting from the last element, and not the sellI, as it is ot properly updated, so we directly subtract from last element.
     }
 
     if (profit > 0)
