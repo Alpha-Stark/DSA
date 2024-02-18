@@ -9,16 +9,16 @@ int maxOnes(int *arr, int n)
     {
         if (arr[i] == 0)
         {
-            allMax = max(currentMax, allMax);
             currentMax = 0;
         }
         else
         {
             currentMax++;
+            allMax = max(currentMax, allMax);
         }
     }
     return allMax;
-    // This is not fully right solution because this will not count the max 1s if they appear at the last. Eg: 1 0 1 1 0 1 1 1 1
+    // This solution won't be vulnerable to any corner cases.
 }
 
 int main()
