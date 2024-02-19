@@ -4,6 +4,15 @@ using namespace std;
 int maxEvenOdd(int *arr, int n)
 {
     int result = 1;
+    for (int i = 0; i < n; i++)
+    {
+    }
+    return result;
+}
+
+int maxEvenOdd2(int *arr, int n)
+{
+    int result = 1;
     for (int i = 0; i < n - 1; i++)
     {
         int currentMax = 1;
@@ -22,7 +31,7 @@ int maxEvenOdd(int *arr, int n)
         result = max(result, currentMax);
     }
     return result;
-}
+} // ø(n^2)
 
 int main()
 {

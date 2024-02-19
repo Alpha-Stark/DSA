@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Kadane's Algorithm
 int maxSum(int *arr, int n)
 {
     int resMax = arr[0]; // or INT_MIN
