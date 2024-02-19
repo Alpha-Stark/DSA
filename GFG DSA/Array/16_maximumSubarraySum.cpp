@@ -7,13 +7,11 @@ int maxSum(int *arr, int n)
     for (int i = 0; i < n; i++)
     {
         int sum = 0;
-        int currentMax = INT_MIN;
         for (int j = i; j < n; j++)
         {
             sum += arr[j];
-            currentMax = max(currentMax, sum);
+            res = max(res, sum);
         }
-        res = max(res, currentMax);
     }
     return res;
 }
