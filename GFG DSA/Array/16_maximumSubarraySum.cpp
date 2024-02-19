@@ -3,6 +3,23 @@ using namespace std;
 
 int maxSum(int *arr, int n)
 {
+    int resMax = arr[0]; // or INT_MIN
+    int prevMax = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        prevMax = max(prevMax + arr[i], arr[i]);
+        resMax = max(prevMax, resMax);
+
+        /* int newMax = max(prevMax + arr[i], arr[i]);
+        resMax = max(newMax, resMax);
+        prevMax = newMax;
+        */
+    }
+    return resMax;
+} // O(n)
+
+int maxSum2(int *arr, int n)
+{
     int res = INT_MIN;
     for (int i = 0; i < n; i++)
     {
@@ -14,7 +31,7 @@ int maxSum(int *arr, int n)
         }
     }
     return res;
-}
+} // O(n^2)
 
 int main()
 {
