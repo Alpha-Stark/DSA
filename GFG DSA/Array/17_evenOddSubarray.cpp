@@ -5,11 +5,22 @@ int maxEvenOdd(int *arr, int n)
 {
     // To solve it in linear time, thinking approach should to from the Kadane's algorithm. Understand the pattern why.
     int result = 1;
-    for (int i = 0; i < n; i++)
+    int currentMax = 1;
+    for (int i = 1; i < n; i++)
     {
+        // Odd + Even = Odd  |  Even + Odd = Odd
+        if ((arr[i] + arr[i - 1]) % 2 != 0)
+        {
+            currentMax++;
+        }
+        else
+        {
+            result = max(result, currentMax);
+            currentMax = 1;
+        }
     }
-    return result;
-}
+    return max(result, currentMax);
+} // ø(n) //Because we can work just by knowing if previous was under valid or not that's it. And from it, it was clear we can apply kadane's
 
 int maxEvenOdd2(int *arr, int n)
 {
@@ -17,7 +28,7 @@ int maxEvenOdd2(int *arr, int n)
     for (int i = 0; i < n - 1; i++)
     {
         int currentMax = 1;
-        // Odd + Even = Odd  | Even + Odd = Odd
+        // Odd + Even = Odd  |  Even + Odd = Odd
         for (int j = i + 1; j < n; j++)
         {
             if ((arr[j] + arr[j - 1]) % 2 != 0) // if (( arr[j]%2!= 0 && arr[j - 1]%2==0) || arr[j]%2== 0 && arr[j - 1]%2!=0)){}
