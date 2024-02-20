@@ -12,14 +12,14 @@ int maxEvenOdd(int *arr, int n)
         if ((arr[i] + arr[i - 1]) % 2 != 0)
         {
             currentMax++;
+            result = max(result, currentMax);
         }
         else
         {
-            result = max(result, currentMax);
             currentMax = 1;
         }
     }
-    return max(result, currentMax);
+    return result;
 } // ø(n) //Because we can work just by knowing if previous was under valid or not that's it. And from it, it was clear we can apply kadane's
 
 int maxEvenOdd2(int *arr, int n)
