@@ -21,6 +21,9 @@ int maxEvenOdd(int *arr, int n)
     }
     return result;
 } // ø(n) //Because we can work just by knowing if previous was under valid or not that's it. And from it, it was clear we can apply kadane's
+/*
+Like Kadane's Algo, here too, we start from i=1, and for every element - 2 cases, either we countinue/extend the previous subarray or we begin a new one. Because here too we are looking at the end of the subarray and making next decision.
+*/
 
 int maxEvenOdd2(int *arr, int n)
 {
