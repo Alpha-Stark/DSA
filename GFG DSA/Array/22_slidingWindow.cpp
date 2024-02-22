@@ -12,7 +12,7 @@ int slidingWindow(int *arr, int n, int k)
     int j = 0;
     for (int i = k; i < n; i++)
     {
-        sum += arr[i] - arr[j];
+        sum += arr[i] - arr[j]; // in place of using j, we could have directly done j <-> i-k
         maxResult = max(maxResult, sum);
         j++;
     }
