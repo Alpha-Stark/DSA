@@ -27,7 +27,7 @@ int kadanes(int *arr, int n)
 /*
     Idea: Take the Maximum of the following two,
         1. Maximum Sum of a Normal Subarray (Easy: Kadane's Algo)
-        2. Maximum sum of a circular Subarray (Subtract the minimum sum subarray from the TotalArraySum and to find minumum subarray sum, we can modify Kadane's algorithm slightly)
+        2. Maximum sum of a circular Subarray (By Subtracting the minimum sum subarray from the TotalArraySum. To find minumum subarray sum, and we can modify Kadane's algorithm slightly)
 */
 int circularSubarray(int *arr, int n)
 {

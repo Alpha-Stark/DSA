@@ -21,7 +21,7 @@ int majority(int *arr, int n)
         }
     }
 
-    // Phase 2, checking is the maximum occuring element is a Majority
+    // Phase 2, checking if the maximum occuring element is a Majority
     int finalCount = 0;
     for (int i = 0; i < n; i++)
     {

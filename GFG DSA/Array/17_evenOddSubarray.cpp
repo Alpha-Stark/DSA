@@ -3,7 +3,7 @@ using namespace std;
 
 int maxEvenOdd(int *arr, int n)
 {
-    // To solve it in linear time, thinking approach should to from the Kadane's algorithm. Understand the pattern why.
+    // To solve it in linear time, thinking approach should be from the Kadane's algorithm. Understand the pattern why.
     int result = 1;
     int currentMax = 1;
     for (int i = 1; i < n; i++)
