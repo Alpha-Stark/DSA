@@ -51,7 +51,6 @@ int main()
 10 20 30 40 50 8 9
 30
 
-***
 5
 100 200 300 10 20
 40
@@ -67,5 +66,33 @@ int main()
 7
 100 200 500 1000 2000 10 20
 25
+
+*/
+
+/* Sir's solution:
+
+int sortedRotated(int arr[], int n, int x)
+    int mid = (low + high) / 2;
+    while(low<=high){
+        if (arr[mid] == x)
+            return mid;
+
+        if (arr[low] <= arr[mid])
+        {
+            if (arr[low] <= x && x <= arr[mid - 1])
+                high = mid - 1;
+            else
+                low = mid + 1;
+        }
+        else
+        {
+            if (arr[mid + 1] <= x && x <= arr[high])
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+    }
+    return -1;
+}
 
 */
