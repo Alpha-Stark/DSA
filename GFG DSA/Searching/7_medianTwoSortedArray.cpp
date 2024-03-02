@@ -3,6 +3,54 @@ using namespace std;
 
 float median(int arr1[], int arr2[], int n1, int n2)
 {
+}
+
+int main()
+{
+    int n1, n2;
+    cin >> n1 >> n2;
+    int arr1[n1];
+    int arr2[n2];
+    for (int i = 0; i < n1; i++)
+    {
+        cin >> arr1[i];
+    }
+    for (int i = 0; i < n2; i++)
+    {
+        cin >> arr2[i];
+    }
+
+    cout << median(arr1, arr2, n1, n2) << endl;
+
+    return 0;
+}
+
+/*
+
+3 4
+1 2 3
+10 11 12 13
+=10
+
+5 5
+10 20 30 40 50
+5 15 25 35 45
+=27.5
+
+6 5
+1 2 3 4 5 6
+10 20 30 40 50
+=6
+
+6 5
+10 20 30 40 50 60
+1 2 3 4 5
+=10
+
+*/
+
+float median(int arr1[], int arr2[], int n1, int n2)
+{
     // Similar to merge 2 sorted LinkedList
     int tillIndex;
     int total = n1 + n2;
@@ -63,47 +111,3 @@ float median(int arr1[], int arr2[], int n1, int n2)
     else
         return arr[tillIndex];
 } // O(n1+n2) = O(n), but if we can bring the complexity to logarithmic time, it will be better.
-
-int main()
-{
-    int n1, n2;
-    cin >> n1 >> n2;
-    int arr1[n1];
-    int arr2[n2];
-    for (int i = 0; i < n1; i++)
-    {
-        cin >> arr1[i];
-    }
-    for (int i = 0; i < n2; i++)
-    {
-        cin >> arr2[i];
-    }
-
-    cout << median(arr1, arr2, n1, n2) << endl;
-
-    return 0;
-}
-
-/*
-
-3 4
-1 2 3
-10 11 12 13
-=10
-
-5 5
-10 20 30 40 50
-5 15 25 35 45
-=27.5
-
-6 5
-1 2 3 4 5 6
-10 20 30 40 50
-=6
-
-6 5
-10 20 30 40 50 60
-1 2 3 4 5
-=10
-
-*/
