@@ -1,16 +1,10 @@
-//{ Driver Code Starts
-// Initial template for C++
-
 #include <bits/stdc++.h>
 using namespace std;
-
-// } Driver Code Ends
-// User function template for C++
 
 class Solution
 {
 public:
-    // Function to find two repeated elements.
+    // Function to find two repeated elements, given that the elemnts are in the range of 0 to n only.
     vector<int> twoRepeated(int arr[], int n)
     {
         vector<int> ans;
