@@ -27,6 +27,17 @@ int hoarePartition(int arr[], int l, int h)
 }
 // Generally more efficient than Lomuto's algorithm due to its simultaneous scanning from both ends, leading to fewer steps and swaps, and often better pivot selection.
 
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        int pi = hoarePartition(arr, low, high);
+
+        quickSort(arr, low, pi);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
 int main()
 {
     int n;
@@ -35,7 +46,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    cout << "PivotIndex: " << hoarePartition(arr, 0, n - 1) << endl;
+    quickSort(arr, 0, n - 1);
 
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
