@@ -1,8 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void lamutoPartition(int arr[], int l, int h)
+int lamutoPartition(int arr[], int l, int h)
 {
+    int i = l;
+    int pivotInd = h;
+    for (int j = l; j <= h - 1; j++)
+    {
+        if (arr[j] <= arr[pivotInd])
+        {
+            swap(arr[j], arr[i]);
+            i++;
+        }
+    }
+    swap(arr[i], arr[pivotInd]);
+    return i;
 }
 
 int main()
@@ -13,7 +25,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    lamutoPartition(arr, 0, n - 1);
+    cout << "PivotIndex: " << lamutoPartition(arr, 0, n - 1) << endl;
 
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
@@ -23,7 +35,7 @@ int main()
 }
 
 /*
-5
-30 20 5 10 8
-=5 8 30 20 10
+6
+30 20 5 10 8 15
+
 */
