@@ -17,6 +17,17 @@ int lamutoPartition(int arr[], int l, int h)
     return i;
 }
 
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        int pi = lamutoPartition(arr, low, high);
+
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
 int main()
 {
     int n;
@@ -25,7 +36,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    cout << "PivotIndex: " << lamutoPartition(arr, 0, n - 1) << endl;
+    quickSort(arr, 0, n - 1);
 
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";

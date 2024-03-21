@@ -33,7 +33,7 @@ void quickSort(int arr[], int low, int high)
     {
         int pi = hoarePartition(arr, low, high);
 
-        quickSort(arr, low, pi);
+        quickSort(arr, low, pi); // Only while using Hoare's Parition Algorithm, well pass pi as high in all the other cases, we'll pass pi-1 as high here.
         quickSort(arr, pi + 1, high);
     }
 }
