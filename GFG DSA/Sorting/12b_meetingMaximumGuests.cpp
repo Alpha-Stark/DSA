@@ -1,6 +1,6 @@
-// Program to find maximum guest at any time in a party
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
+// #include <iostream>
+// #include <algorithm>
 using namespace std;
 
 int findMaxGuests(int arr[], int dep[], int n)
@@ -27,6 +27,7 @@ int findMaxGuests(int arr[], int dep[], int n)
     }
     return res;
 }
+
 int main()
 {
     int arr[] = {1, 2, 10, 5, 5};
