@@ -20,7 +20,7 @@ int countAndMerge(int arr[], int l, int m, int r)
         else
         {
             arr[k++] = right[j++];
-            res += (n1 - i); // combiner inversions addition, number of left[] elements, greater than right[]'s current element
+            res += (n1 - i); // combined inversions addition, number of left[] elements, greater than right[]'s current element
         }
     }
     while (i < n1)
