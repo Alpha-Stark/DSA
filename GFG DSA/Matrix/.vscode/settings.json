@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "vector": "cpp"
+    },
+    "clang-format.style": {
+        "BasedOnStyle": "LLVM",
+        "Standard": "Cpp11"
+    }
+}
