@@ -2,31 +2,20 @@
 using namespace std;
 // To be allowed to declare a multidementional vector, have to change formatting setting, as it wont be done just by disabelling prettier extension. In settings, under format section, changed the "c_cpp: Formatting" from "default" to "vsFormat". 
 
+// Sir's solution
 void searchInRowColumnSorted(vector<vector<int> >& A, int x) {
     int r = A.size(), c = A[0].size();
     int i = 0, j = c - 1; //we shouldn't traverse from left top to right, because it will give inaccurate answer. Take the example of x=27 from sir's input example.
-    while (j >= 0)
+    while (i < r && j >= 0)
     {
         if (A[i][j] == x) {
-            cout << "(" << i << ", " << j << ")" << endl;
+            cout << "Found at (" << i << ", " << j << ")" << endl;
             return;
         }
         else if (A[i][j] > x)
             j--;
         else
-            break;
-    }
-    i++;
-    while (i <= r - 1 && j != -1)
-    {
-        if (A[i][j] == x) {
-            cout << "(" << i << ", " << j << ")" << endl;
-            return;
-        }
-        else if (A[i][j] < x)
             i++;
-        else //or elif(A[i][j] > x)
-            break;
     }
     cout << "Element not found." << endl;
 }
@@ -119,4 +108,32 @@ void searchInRowColumnSortedNaive(vector<vector<int> >& A, int x) {
     cout << "Elemnt Not found in Matrix" << endl;
 }
 
-
+// Can we done without using two loops and a but differnet approach
+void MysearchInRowColumnSorted(vector<vector<int> >& A, int x) {
+    int r = A.size(), c = A[0].size();
+    int i = 0, j = c - 1; //we shouldn't traverse from left top to right, because it will give inaccurate answer. Take the example of x=27 from sir's input example.
+    while (j >= 0)
+    {
+        if (A[i][j] == x) {
+            cout << "(" << i << ", " << j << ")" << endl;
+            return;
+        }
+        else if (A[i][j] > x)
+            j--;
+        else
+            break;
+    }
+    i++;
+    while (i <= r - 1 && j != -1)
+    {
+        if (A[i][j] == x) {
+            cout << "(" << i << ", " << j << ")" << endl;
+            return;
+        }
+        else if (A[i][j] < x)
+            i++;
+        else //or elif(A[i][j] > x)
+            break;
+    }
+    cout << "Element not found." << endl;
+}
