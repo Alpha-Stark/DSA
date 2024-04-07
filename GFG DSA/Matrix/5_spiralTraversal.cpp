@@ -18,8 +18,8 @@ void spiralTraversal(vector<vector<int> >& A) {
         int top = 0, right = c - 1, bottom = r - 1, left = 0;
         while (top <= bottom && left <= right) {
             //  Print the first row from the remaining rows
-            for (int i = left; i <= right; i++)
-                cout << A[top][i] << " ";
+            for (int j = left; j <= right; j++)
+                cout << A[top][j] << " ";
             top++;
 
             //  Print the last column from the remaining columns
@@ -29,8 +29,8 @@ void spiralTraversal(vector<vector<int> >& A) {
 
             // Print the last row from the remaining rows
             if (top <= bottom) {
-                for (int i = right; i >= left; i--)
-                    cout << A[bottom][i] << " ";
+                for (int j = right; j >= left; j--)
+                    cout << A[bottom][j] << " ";
                 bottom--;
             }
 
