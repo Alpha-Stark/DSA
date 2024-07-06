@@ -4,7 +4,7 @@ using namespace std;
 struct MyHash
 {
     int BUCKET;
-    list<int>* table;
+    list<int>* table; // list is a class that is used to implement doubly linkedList in C++
     MyHash(int b) {
         BUCKET = b;
         table = new list<int>[b];
@@ -21,7 +21,15 @@ struct MyHash
     bool search(int key) {
         int i = key % BUCKET;
 
-        list<int>::iterator it;
+        /*
+            list<int>::iterator it;
+            for(it=table[i].begin();it<table.end();it++) {
+                if (*it == key)
+                    return true;
+            }
+            return false;
+        */
+
         for (auto x : table[i]) {
             if (x == key)
                 return true;
