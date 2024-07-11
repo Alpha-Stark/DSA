@@ -23,7 +23,9 @@ struct MyHash
 
         /*
             list<int>::iterator it;
-            for(it=table[i].begin();it<table.end();it++) {
+            for(it=table[i].begin();it != table.end();it++) {
+
+            for(auto it=table[i].begin();it != table.end();it++) {
                 if (*it == key)
                     return true;
             }
