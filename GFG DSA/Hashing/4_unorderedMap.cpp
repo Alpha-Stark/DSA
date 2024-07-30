@@ -1,4 +1,4 @@
-// Unordered Map: Unordered Keys with Fast Search,insert & Delete operation. With Maps, its Tc = log(n)
+// Unordered Map: Unordered Keys with Fast Search,insert & Delete operation. With (ordered) Maps, it's TC = log(n)
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 int main() {
 
     unordered_map<string, int> umap;
-    umap["Mann"] = 100000; //umap["key_name"] modifies the existing key's value if exists, otherwise creats a new pair.
+    umap["Mann"] = 100000; //umap["key_name"] modifies the existing key's value if already exists, otherwise creats a new pair.
     umap["gfg"] = 10000;
     umap.insert({ "Savani", 100 });
 
@@ -14,7 +14,7 @@ int main() {
         cout << i.first << " " << i.second << endl;
 
 
-    if (umap.find("gfg") != umap.end()) // .find() returns the iterator to the desired pair. .end() return/pointd towards the element belond/nextTo the last element.
+    if (umap.find("gfg") != umap.end()) // .find() returns the iterator to the desired pair & in case of not found, returns the .end() address. .end() return/pointd towards the element belond/nextTo the last element.
         cout << "Found!!" << endl;
     else
         cout << "Not Found!!" << endl;
