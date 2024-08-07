@@ -29,9 +29,9 @@ int main() {
         totalSum += arr[i];
     }
 
+    // As it is subarray, so we only have to consider contegious elements. i.e., {1,2,3} => {1,3} is not considered a subset
     subarraySum0(arr, n);
 
-    // As it is subarray, so we only have to consider contegious elements. i.e., {1,2,3} => {1,3} is not considered a subset
 
     /* Wrong Solution because of this test case 3 -3 -4 -2 10
     int i = 0, j = n - 1;
