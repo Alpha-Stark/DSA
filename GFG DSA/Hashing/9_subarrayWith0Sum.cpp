@@ -32,6 +32,8 @@ int main() {
     subarraySum0(arr, n);
 
     // As it is subarray, so we only have to consider contegious elements. i.e., {1,2,3} => {1,3} is not considered a subset
+
+    /* Wrong Solution because of this test case 3 -3 -4 -2 10
     int i = 0, j = n - 1;
     if (totalSum == 0)
     {
@@ -67,10 +69,15 @@ int main() {
     else {
         cout << "No" << endl;
         return 0;
-    }
+    } */
 }
 
 /*
+
+5
+3 -3 -4 -2 10
+=Yes
+
 6
 1 4 13 -3 -10 5
 =Yes
