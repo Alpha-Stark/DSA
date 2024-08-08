@@ -4,7 +4,7 @@ using namespace std;
 /*
 ***
 Remember there's a pattern, Wherever there's a question where we have to look about sum 0 or some given value,
-we also use prefixSum method. And in most cases, using prefixSum just after calculation each of the prefixSums (in each iteration).
+we mostly/always use prefixSum method. And in most cases, using prefixSum just after calculation each of the prefixSums (in each iteration).
 Rather than getting all prefixSum at once and then looking at the scenerio.
 ***
 */

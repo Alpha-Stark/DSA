@@ -1,6 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+***
+Remember there's a pattern, Wherever there's a question where we have to look about sum 0 or some given value,
+we mostly/always use prefixSum method. And in most cases, using prefixSum just after calculation each of the prefixSums (in each iteration).
+Rather than getting all prefixSum at once and then looking at the scenerio.
+***
+*/
+
 int longestSubarraySum(vector<int> arr, int sum) {
     int ans = 0;
     unordered_map<int, int> m;
