@@ -29,7 +29,7 @@ int main() {
         totalSum += arr[i];
     }
 
-    // As it is subarray, so we only have to consider contegious elements. i.e., {1,2,3} => {1,3} is not considered a subset
+    // As it is subarray, so we only have to consider contegious elements. i.e., {1,2,3} => {1,3} is not considered a subarray
     subarraySum0(arr, n);
 
 

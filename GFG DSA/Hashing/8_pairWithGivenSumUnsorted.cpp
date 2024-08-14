@@ -12,7 +12,7 @@ int main() {
     cin >> sum;
 
     /*
-        Major Learning over here is that if the array was sorted, we could have used 2 pointers approach and solved it in lest time and space complexity both.
+        Major Learning over here is that if the array was sorted, we could have used 2 pointers approach and solved it in less time and space complexity both.
         But the array is unsorted, and only&only that's why we went (should) for Hashing.
     */
 
