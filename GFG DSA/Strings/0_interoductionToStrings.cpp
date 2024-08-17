@@ -41,6 +41,29 @@ We just now from line 31, instead of just printing the charater with frequency, 
 in loop and that's how we print the given string in sorted order.
 */
 
+/*
+In majority of c/c++, string library, it relies on putting the '\0' at the end of the string/char array.****
+So if you do sizeof(str) => str.length() + 1, because of the '\0' occupancy.
+After the input charaters are filled up in character array, if there's more size of the character array, it keep on putting the '\0' till the end.
+Also if you decide to create a character array with single quotes, you then must have to insert '\0' manually at the end or its will give sagmentation fault.
+So better to just use double quote instead of single one[C-Style string] to not be in such mess. E.g: (if we still want to use array) int char str[] = "gfg";
+*/
+
+/* Most commonly used C-Style string funtions:
+strlen(str);
+// Scans till it finds '\0' and print the value/size.
+
+strcmp(s1,s2);
+//Compares two string lexographically, so is the first string is greater than the second, its returns positive value. If lexographically same, returns 0. If s1<s2 lexo, return negative value.
+
+strcpy(s1,s2);
+// Copies the string s2 to the s1. s1 is replaced full by s2
+
+But its better to use C++-Style string function than to use the C-Style string functions. And way less problems. Just like vectors to array
+
+Should go through the gfg video to get the base more clear. "Strings in C++" video.
+*/
+
 int main() {
     string str;
     cin >> str;
