@@ -37,7 +37,9 @@ int main()
 {
     string s = "mann arvindbhai savani";
     helper(s);
+    cout << endl;
     cout << s << endl;
+    cout << endl;
 
     return 0;
 }

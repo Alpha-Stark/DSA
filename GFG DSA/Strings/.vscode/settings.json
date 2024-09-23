@@ -1,3 +1,10 @@
 {
-    "C_Cpp.default.compilerPath": "/usr/local/opt/gcc@13.2.0/bin/g++"
+    "C_Cpp.default.compilerPath": "/usr/local/opt/gcc@13.2.0/bin/g++",
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.ejs": "html",
+        "regex": "cpp",
+        "sstream": "cpp",
+        "locale": "cpp"
+    }
 }
