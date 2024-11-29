@@ -1,6 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void helperImproved(string& str, string& pat) {
+    int m = str.length();
+    int n = pat.length();
+    bool flag = false;
+
+    int i = 0;
+    while (i <= m - n)
+    {
+        if (str[i] == pat[0])
+        {
+            int stringI = i;
+            for (int j = 0; j < n; j++)
+            {
+                if (str[stringI] == pat[j]) {
+                    if (j == n - 1)
+                    {
+                        cout << i << " ";
+                        flag = true;
+                        i++;
+                        break;
+                    }
+                    stringI++;
+                }
+                else {
+                    i = stringI;
+                    break;
+                }
+            }
+        }
+        else {
+            i++;
+        }
+    }
+
+    if (!flag)
+        cout << "Not Found" << endl;
+}
+
 void helper(string& str, string& pat) {
     int m = str.length();
     int n = pat.length();
@@ -10,8 +48,8 @@ void helper(string& str, string& pat) {
     {
         if (str[i] == pat[0])
         {
-            int stringI = i + 1;
-            for (int j = 1; j < n; j++)
+            int stringI = i; //not using stringI= i+1 & j=1 here because of the edge edge case. str=mann, patt=a;
+            for (int j = 0; j < n; j++)
             {
                 if (str[stringI] == pat[j]) {
                     if (j == n - 1)
@@ -31,7 +69,6 @@ void helper(string& str, string& pat) {
 
     if (!flag)
         cout << "Not Found" << endl;
-
 }
 
 int main() {
@@ -40,7 +77,7 @@ int main() {
     // cin >> pattern;
     string str = "mannsavani";
     string pattern = "an";
-    helper(str, pattern);
+    helperImproved(str, pattern);
 
     return 0;
 }
